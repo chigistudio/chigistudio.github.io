@@ -15,12 +15,12 @@
     function ctrlBulb(){
       if(power==0){
         document.getElementById('btn1').src='light_on.png'
-        cpf.set("white led", power);
         power=1
+        cpf.set("white led", power);
       }else{
         document.getElementById('btn1').src='light_off.png'
-        cpf.set("white led", power);
         power=0
+        cpf.set("white led", power);
       }  
     }
   </script>
