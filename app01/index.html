@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>
+      ChiGiStudio
+    </title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <center>
+    <input id='btn1' type="image" src="light_off.png" onclick="ctrlBulb()"></input>
+    </center>
+  </body>
+  <script>
+    var power=0
+    function ctrlBulb(){
+      if(power==0){
+        document.getElementById('btn1').src='light_on.png'
+        cpf.set("white led", power);
+        power=1
+      }else{
+        document.getElementById('btn1').src='light_off.png'
+        cpf.set("white led", power);
+        power=0
+      }  
+    }
+  </script>
+</html>
+
