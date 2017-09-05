@@ -16,18 +16,18 @@
   <script>
     var power=0,speed=0
     function ctrlPower(){
-//       if(power==0){
-//         document.getElementById('btn1').src='fan_on.png'
-//         power=1
-//         cpf.set("fan", speed);
-//       }else{
-//         document.getElementById('btn1').src='fan_off.png'
-//         power=0
-//         cpf.set("fan", 0);
-//       }  
+      if(power==0){
+        document.getElementById('btn1').src='fan_on.png'
+        power=1
+        cpf.set("fan", speed);
+      }else{
+        document.getElementById('btn1').src='fan_off.png'
+        power=0
+        cpf.set("fan", 0);
+      }  
     }
     function ctrlSpeed(){
-//       speed=document.getElementById('ran1').value
+      speed=document.getElementById('ran1').value
       cpf.set("fan",255);
     }
   </script>
