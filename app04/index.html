@@ -9,15 +9,15 @@
     ID:
     <input id='num' type=number min='1' max='10'></input>
     <input id='tex' type=text style='width:300px'></input>
-    <input id='edi' type=image src='edit.png' onclick='write()'></input><br> 
-    <input id='lis' type=image src='list.png' onclick='read()'></input> 
+    <input type=image src='edit.png' onclick='read()'></input><br> 
+    <input type=image src='list.png' onclick='list()'></input> 
     <p id='print'></p>
   </body>
   <script>
-    function write(){
-      //var i=document.getElementById('num').value,
-      //    s=document.getElementById('tex').value
-      //aop.setStore(i,s);
+    function list(){
+      var i=document.getElementById('num').value,
+          s=document.getElementById('tex').value
+      aop.setStore(i,s);
     } 
 
     function read(){
@@ -29,4 +29,5 @@
     } 
   </script>
 </html>
+
 
