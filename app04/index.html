@@ -9,19 +9,19 @@
     ID:
     <input id='num' type=number min='1' max='10'></input>
     <input id='tex' type=text style='width:300px'></input>
-    <input type=image src='edit.png' onclick='read()'></input><br> 
+    <input type=image src='edit.png' onclick='edit()'></input><br> 
     <input type=image src='list.png' onclick='list()'></input> 
     <p id='print'></p>
   </body>
   <script>
-    function list(){
+    function edit(){
       var i=document.getElementById('num').value,
           s=document.getElementById('tex').value
       var r=aop.setStore(i,s);
-      document.getElementById('print').innerHTML=s
+      document.getElementById('print').innerHTML=r
     } 
 
-    function read(){
+    function list(){
       document.getElementById('print').innerHTML=''
       for(var i=1;i<=10;i++){
         var s=i+'.'+aop.getStore(i)+'<br>';
