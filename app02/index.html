@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>
+      ChiGiStudio
+    </title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <center>
+    <input id='btn1' type='image' src='fan_off.png' onclick='ctrlPower()'></input>
+    <br>
+    <input id='ran1' type='range' min='0' max='255' onchange='ctrlSpeed()'></input>
+    </center>
+    <p id='print'>
+  </body>
+  <script>
+    var power=0,speed=0
+    function ctrlPower(){
+      if(power==0){
+        document.getElementById('btn1').src='fan_on.png'
+        power=1
+        cpf.set("fan", speed);
+      }else{
+        document.getElementById('btn1').src='fan_off.png'
+        power=0
+        cpf.set("fan", 0);
+      }  
+    }
+    function ctrlSpeed(){
+      speed=document.getElementById('ran1').value
+      cpf.set("fan", speed);
+    }
+  </script>
+</html>
+
