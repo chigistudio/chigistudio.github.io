@@ -21,6 +21,7 @@
     } 
 
     function read(){
+      document.getElementById('print').innerHTML=''
       for(var i=1;i<=10;i++){
         var s=i+'.'+aop.getStore(i)+'<br>';
         document.getElementById('print').innerHTML+=s
