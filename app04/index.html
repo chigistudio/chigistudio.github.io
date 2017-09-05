@@ -17,8 +17,8 @@
     function edit(){
       var i=document.getElementById('num').value,
           s=document.getElementById('tex').value
-      // aop.setStore(i,s);
-      document.getElementById('print').innerHTML=s
+      var r=aop.setStore(i,s);
+      document.getElementById('print').innerHTML=r
     } 
 
     function list(){
