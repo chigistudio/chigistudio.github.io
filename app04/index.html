@@ -16,8 +16,8 @@
   <script>
     function list(){
       var i=document.getElementById('num').value,
-          s=document.getElementById('tex').value,
-          r=aop.setStore(i,s);
+          s=document.getElementById('tex').value
+      var r=aop.setStore(i,s);
       document.getElementById('print').innerHTML=r
     } 
 
