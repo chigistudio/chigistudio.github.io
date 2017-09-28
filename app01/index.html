@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
   </head>
   <body>
+    <input id='che1' type='checkbox'>connect CPF</input>
     <center>
     <input id='btn1' type="image" width=500 height=500 src="light_off.png" onclick="ctrlBulb()"></input>
     </center>
@@ -13,14 +14,16 @@
   <script>
     var power=0
     function ctrlBulb(){
+      var connect=document.getElementById('che1').checked
       if(power==0){
         document.getElementById('btn1').src='light_on.png'
         power=1
-        cpf.set("white led", power);
+        if(connect){cpf.set("white led", power);}
       }else{
         document.getElementById('btn1').src='light_off.png'
         power=0
         cpf.set("white led", power);
+        if(connect){cpf.set("white led", power);}
       }  
     }
   </script>
