@@ -4,31 +4,34 @@
       ChiGiStudio
     </title>
     <meta charset="UTF-8">
+    <style>
+      input[type="range"]{
+        -webkit-appearance: none;
+        overflow:hidden;     /* 限定範圍 */
+        width:500px;
+        height:30px;
+        outline : none;      /* 避免點選會有藍線或虛線 */
+        background:none;
+      }
+
+    </style>
   </head>
   <body>
+    <input id='che1' type='checkbox'>connect CPF</input>
     <center>
-    <input id='btn1' type='image' src='fan_off.png' onclick='ctrlPower()'></input>
+    <input id='btn1' type='image' width=500 height=500 src='fan.png'></input>
     <br>
-    <input id='ran1' type='range' min='0' max='255' onchange='ctrlSpeed()'></input>
+    <input id='ran1' type='range' width=400px min='0' max='255' onchange='ctrlSpeed()'></input>
+    <p id='print'>
     </center>
     <p id='print'>
   </body>
   <script>
-    var power=0,speed=0
-    function ctrlPower(){
-      if(power==0){
-        document.getElementById('btn1').src='fan_on.png'
-        power=1
-        cpf.set("fan", speed);
-      }else{
-        document.getElementById('btn1').src='fan_off.png'
-        power=0
-        cpf.set("fan", 0);
-      }  
-    }
     function ctrlSpeed(){
-      speed=document.getElementById('ran1').value
-      cpf.set("fan",255);
+      var speed=document.getElementById('ran1').value
+      var connect=document.getElementById('che1').checked
+      if(connect){cpf.set("fan", speed);}
+      document.getElementById('print').innerHTML=speed
     }
   </script>
 </html>
