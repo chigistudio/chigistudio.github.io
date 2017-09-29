@@ -52,7 +52,7 @@
       var speed=document.getElementById('ran1').value
       var connect=document.getElementById('che1').checked
       if(connect){
-        cpf.request(' ["resetPin"],["setPinMode", "digital", 3, "PWM"]')
+//         cpf.request(' ["resetPin"],["setPinMode", "digital", 3, "PWM"]')
         cpf.set("fan", speed);
       }
       document.getElementById('print').innerHTML=speed
