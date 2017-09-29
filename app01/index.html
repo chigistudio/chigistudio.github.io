@@ -14,7 +14,7 @@
   <script>
     var power=0
     function ctrlBulb(){
-//       if(connect){cpf.set(cpf.setPinMode('["resetPin"],["setPinMode", "digital", 2, "OUTPUT"]');}
+      if(connect){var ret = cpf.set(cpf.setPinMode('["resetPin"],["setPinMode", "digital", 2, "OUTPUT"]');}
       var connect=document.getElementById('che1').checked
       if(power==0){
         document.getElementById('btn1').src='light_on.png'
