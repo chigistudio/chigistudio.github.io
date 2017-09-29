@@ -22,7 +22,7 @@
       document.getElementById('time').innerHTML=now.getHours()+':'+now.getMinutes()+':'+now.getSeconds()
       var connect=document.getElementById('che1').checked
       if(connect){
-        cpf.request('["resetPin"],["setPinMode", "analog", 0 , "INPUT"],["setPinMode", "analog", 1 , "INPUT"]')
+        var ret = cpf.request('["resetPin"],["setPinMode", "analog", 0 , "INPUT"],["setPinMode", "analog", 1 , "INPUT"]')
         document.getElementById('lume').innerHTML=cpf.get("light sensor");
         document.getElementById('temp').innerHTML=cpf.get("temperature sensor");
       }
