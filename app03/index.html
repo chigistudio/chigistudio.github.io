@@ -6,20 +6,27 @@
     <meta charset="UTF-8">
   </head>
   <body>
-    <img src="clock.png"><font id='time'>00:00:00</font>
+    <input id='che1' type='checkbox'>connect CPF</input>
+    <center>
+    <img src="clock.png" width=200 height=200><font id='time' size=7 >00:00:00</font>
     <br><br>
-    <img src="light.png"><font id='lume'>1023</font>
+    <img src="light.png" width=200 height=200><font id='lume' size=7>1023</font>
     <br><br>
-    <img src="therm.png"><font id='temp'>1023</font>
+    <img src="therm.png" width=200 height=200><font id='temp' size=7>1023</font>
     <p id='print'>
+    </center>  
   </body>
   <script>
     setInterval(function(){
       var now = new Date()
       document.getElementById('time').innerHTML=now.getHours()+':'+now.getMinutes()+':'+now.getSeconds()
-      document.getElementById('lume').innerHTML=cpf.get("light sensor");
-      document.getElementById('temp').innerHTML=cpf.get("temperature sensor");
-    },1000)
+      var connect=document.getElementById('che1').checked
+      if(connect){
+        cpf.request('["setPinMode", "analog", 0 , "INPUT"],["setPinMode", "analog", 1 , "INPUT"]')
+        document.getElementById('lume').innerHTML=cpf.get("light sensor");
+        document.getElementById('temp').innerHTML=cpf.get("temperature sensor");
+      }
+    },1000) 
 
   </script>
 </html>
